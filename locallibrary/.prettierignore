@@ -1,0 +1,2 @@
+# Ignore Django templates and other files Prettier shouldn't format
+catalog/templates/base_generic.html
