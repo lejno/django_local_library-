@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <th>{{ form.title.label_tag }}</th>
+      <td>{{ form.title }}</td>
+    </tr>
+    <tr>
+      <th>{{ form.author.label_tag }}</th>
+      <td>
+        {{ form.author }}
+        <a href="{% url 'author-create' %}?next={{ request.path }}">Add author</a>
+      </td>
+    </tr>
+    <tr>
+      <th>{{ form.author_name.label_tag }}</th>
+      <td>{{ form.author_name }}</td>
+    </tr>
+    <tr>
+      <th>{{ form.summary.label_tag }}</th>
+      <td>{{ form.summary }}</td>
+    </tr>
+    <tr>
+      <th>{{ form.isbn.label_tag }}</th>
+      <td>{{ form.isbn }}</td>
+    </tr>
+    <tr>
+      <th>{{ form.genre.label_tag }}</th>
+      <td>{{ form.genre }}
+        <a href="{% url 'genre-create' %}?next={{ request.path }}">Add genre</a>
+      </td>
+        
+    </tr>
+    <tr>
+      <th>{{ form.language.label_tag }}</th>
+      <td>
+        {{ form.language }}
+        <a href="{% url 'language-create' %}?next={{ request.path }}">Add language</a>
+      </td>
+    </tr>
+    <tr>
+      <th>{{ form.language_name.label_tag }}</th>
+      <td>{{ form.language_name }}</td>
+    </tr>
+  </table>
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
